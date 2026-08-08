@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Grape Disease System - Rural India Theme */
+    --background: 43 100% 97%; /* Cream #FFF8E1 */
+    --foreground: 0 0% 26%; /* Dark Gray #424242 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 26%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 26%;
+
+    --primary: 122 39% 49%; /* Soft Green #4CAF50 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 100% 94%;
+    --secondary-foreground: 122 56% 33%; /* Dark Green #2E7D32 */
+
+    --muted: 0 0% 88%; /* Light Gray #E0E0E0 */
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 122 56% 33%; /* Dark Green #2E7D32 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 122 39% 49%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 15%;
+    --organic: 142 76% 36%;
+    --organic-foreground: 0 0% 100%;
+    --chemical: 207 90% 54%;
+    --chemical-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 43 100% 97%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 43 100% 97%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 43 100% 97%;
+
+    --primary: 122 39% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 122 39% 60%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 122 56% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 122 39% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: hsl(var(--accent));
+  }
+}
+
+@layer components {
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-md border border-border p-6;
+  }
+
+  .section-divider {
+    @apply border-t border-muted my-6;
+  }
+
+  .upload-zone {
+    @apply border-2 border-dashed border-primary/40 rounded-xl p-8 
+           bg-secondary/50 hover:border-primary hover:bg-secondary 
+           transition-all duration-200 cursor-pointer;
+  }
+
+  .upload-zone-active {
+    @apply border-primary bg-primary/10;
+  }
+
+  .pesticide-card {
+    @apply bg-card rounded-lg border border-border p-4 
+           hover:shadow-md transition-shadow duration-200;
+  }
+
+  .badge-organic {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+           bg-[hsl(var(--organic))] text-[hsl(var(--organic-foreground))];
+  }
+
+  .badge-chemical {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+           bg-[hsl(var(--chemical))] text-[hsl(var(--chemical-foreground))];
+  }
+
+  .btn-primary-large {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl 
+           text-lg font-semibold shadow-md hover:shadow-lg 
+           hover:bg-primary/90 transition-all duration-200;
+  }
+
+  .input-large {
+    @apply w-full px-4 py-3 text-lg rounded-lg border border-input 
+           bg-card focus:outline-none focus:ring-2 focus:ring-primary/50 
+           focus:border-primary transition-all;
+  }
+
+  .input-base {
+    @apply w-full px-3 py-2 text-base rounded-lg border border-input 
+           bg-card focus:outline-none focus:ring-2 focus:ring-primary/50 
+           focus:border-primary transition-all;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
